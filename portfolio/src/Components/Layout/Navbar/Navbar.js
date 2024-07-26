@@ -70,7 +70,7 @@ function NavBar() {
 
             <Nav.Item>
               <NavLink
-                to="/about"
+                to="/experience"
                 className={({ isActive }) =>
                   isActive
                     ? "nav-link pr-4 pl-4 active"
@@ -78,7 +78,7 @@ function NavBar() {
                 }
                 onClick={() => updateExpanded(false)}
               >
-                About
+                Experience
               </NavLink>
             </Nav.Item>
 
