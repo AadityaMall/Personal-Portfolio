@@ -19,7 +19,7 @@ const Home = () => {
               <strong> Aaditya Mall</strong>
             </h1>
 
-            <div className="h-[40px] text-xl py-[20px]">
+            <div className="h-[40px] text-xl py-[20px] text-brandColor">
               <Typewriter
                 options={{
                   strings: ["Student", "Freelancer", "MERN Stack Developer"],
@@ -36,6 +36,7 @@ const Home = () => {
               src={`/images/HomePage.png`}
               alt="home pic"
               className="img-fluid max-h-64 my-[30px] z-100"
+              loading="lazy"
             />
           </Col>
         </Row>

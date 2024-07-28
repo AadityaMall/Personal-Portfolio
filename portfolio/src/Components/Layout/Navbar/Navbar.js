@@ -39,7 +39,7 @@ function NavBar() {
           href="/"
           className="d-flex align-items-center justify-content-center"
         >
-          <h3>{`<Aaditya Mall/>`}</h3>
+          <h3 className="text-brandColor">{`<Aaditya Mall/>`}</h3>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
