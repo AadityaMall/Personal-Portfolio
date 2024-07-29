@@ -1,6 +1,16 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { Row, Col, Container } from "react-bootstrap";
+import {Instagram,GitHub,LinkedIn} from "@mui/icons-material"
+
+const iconSX = {
+  fontSize: "50px",
+  color: "white",
+  transition: ".1s ease-in-out",
+  margin:"15px",
+  ":hover": { color: "#2fcbe0", cursor: "pointer" },
+};
+
 const Home = () => {
   return (
     <>
@@ -29,9 +39,14 @@ const Home = () => {
                 }}
               />
             </div>
+            <div className="social-media mt-[40px]">
+              <Instagram sx={iconSX}/>
+              <GitHub sx={iconSX}/>
+              <LinkedIn sx={iconSX}/>
+            </div>
           </Col>
 
-          <Col md={5}className="flex items-center justify-center">
+          <Col md={5} className="flex items-center justify-center">
             <img
               src={`/images/HomePage.png`}
               alt="home pic"
