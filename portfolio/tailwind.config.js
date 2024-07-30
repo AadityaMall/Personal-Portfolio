@@ -9,6 +9,9 @@ module.exports = {
       colors:{
         brandColor:"#2fcbe0"
       },
+      maxWidth: {
+        '500': '400px',
+      },
     },
   },
   plugins: [],

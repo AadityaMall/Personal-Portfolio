@@ -1,9 +1,18 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { Container } from "react-bootstrap";
-import { Instagram, GitHub, LinkedIn } from "@mui/icons-material";
-import { SvgIcon } from "@mui/material";
-import { Link } from "react-router-dom";
+import {
+  Instagram,
+  GitHub,
+  LinkedIn,
+  Description,
+  Call,
+} from "@mui/icons-material";
+import { SvgIcon, Button } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import useIntersectionObserver from "../../useIntersectionObserver";
+import { Row, Col } from "react-bootstrap";
+
 // Custom Hackerrank icon using createSvgIcon
 const HackerrankIcon = (props) => (
   <SvgIcon {...props} viewBox="0 0 448 512">
@@ -20,13 +29,23 @@ const iconSX = {
 };
 
 const Home = () => {
+  const navigate = useNavigate()
+  const [ref, isVisible] = useIntersectionObserver({
+    threshold: 0.1, // Adjust as needed
+  });
+
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Container className="flex flex-col justify-evenly items-center h-[100%]">
+    <div
+      className={`flex justify-center overflow-hidden items-center h-screen fade-in-section ${
+        isVisible ? "visible" : ""
+      }`}
+      ref={ref}
+    >
+      <Container className="flex flex-col justify-evenly items-center h-[90%]">
         <img
           src="/images/HomePage.png"
           alt="home pic"
-          className="img-fluid max-h-64 z-100"
+          className="img-fluid max-h-48 z-100"
           loading="lazy"
         />
         <h1 className="heading text-white">
@@ -35,11 +54,9 @@ const Home = () => {
             👋🏻
           </span>
         </h1>
-
         <h1 className="text-brandColor">
           I'm <strong>Aaditya Mall</strong>
         </h1>
-
         <div className="h-[40px] text-xl py-[20px]">
           <Typewriter
             options={{
@@ -55,15 +72,40 @@ const Home = () => {
           <Link to={`https://www.instagram.com/aaditya.mall`}>
             <Instagram sx={iconSX} />
           </Link>
-          <Link>
+          <Link to={`https://www.hackerrank.com/profile/aadityarmall`}>
             <HackerrankIcon sx={iconSX} />
           </Link>
-          <Link>
+          <Link to={`https://www.linkedin.com/in/aaditya-mall-b45a48216/`}>
             <LinkedIn sx={iconSX} />
           </Link>
-          <Link>
+          <Link to={`https://github.com/AadityaMall`}>
             <GitHub sx={iconSX} />
           </Link>
+        </div>
+        <div className="w-[100%] max-w-500">
+          <Row>
+            <Col md={6} className="flex justify-center items-center">
+              <Button
+                variant="contained"
+                color="primary"
+                className="w-full max-w-500 m-2"
+                onClick={() => navigate("/resume")} // Use navigate function for routing
+              >
+                <Description />
+                Resume
+              </Button>
+            </Col>
+            <Col md={6} className="flex justify-center items-center">
+              <Button
+                variant="contained"
+                color="primary"
+                className="w-full max-w-500 m-2"
+              >
+                <Call />
+                Contact
+              </Button>
+            </Col>
+          </Row>
         </div>
       </Container>
     </div>
