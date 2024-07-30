@@ -7,7 +7,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #000000 !important;
 }
+/* Style the scrollbar */
+body::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
 
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the scrollbar track */
+  border-radius: 20px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #2fcbe071; /* color of the scrollbar thumb */
+  border-radius: 20px; /* roundness of the thumb */
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #2fcbe0; /* color of the thumb on hover */
+  border-radius: 20px;
+}
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
   position: absolute !important;
   left: 12px !important;
@@ -47,20 +68,6 @@ body {
     display: none !important;
   }
 }
-/* .navbar-brand {
-  background-color: #fde74c;
-  background-image: linear-gradient(
-    319deg,
-    #fde74c 0%,
-    #32ff7a 37%,
-    #2fcbe0 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; 
-  color: transparent; 
-} */
-
 .nav-link {
   padding: 0.8rem 1rem !important;
 }
@@ -103,7 +110,8 @@ body {
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #2fcbe0 !important;
+  color: white !important;
+  border-bottom: 2px solid #2fcbe0;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {

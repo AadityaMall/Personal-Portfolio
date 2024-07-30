@@ -11,7 +11,7 @@ function App() {
       <Suspense fallback={<Loader />}>
         <NavBar />
         <Particle />
-        <div className="pt-[50px]">
+        <div>
           <Routes>
             <Route path={`/*`} element={<Home />} />
             <Route path={`/home`} element={<Home />} />
