@@ -152,7 +152,7 @@ const Home = () => {
             </Col>
             <Col md={4} className="flex justify-center items-center">
             <img
-            src="/images/Aaditya.jpg"
+            src="/images/Aaditya.JPG"
             alt="Aaditya Mall"
             className="img-fluid max-h-80 z-100 rounded"
             loading="lazy"
