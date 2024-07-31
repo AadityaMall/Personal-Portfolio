@@ -6,7 +6,7 @@ import {
   GitHub,
   LinkedIn,
   Description,
-  Call,
+  Call,ArrowDownward
 } from "@mui/icons-material";
 import { SvgIcon, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
@@ -36,9 +36,8 @@ const Home = () => {
 
   return (
     <div
-      className={`flex justify-center overflow-hidden items-center h-screen fade-in-section ${
-        isVisible ? "visible" : ""
-      }`}
+      className={`flex justify-center overflow-hidden items-center h-screen fade-in-section ${isVisible ? "visible" : ""
+        }`}
       ref={ref}
     >
       <Container className="flex flex-col justify-evenly items-center h-[90%]">
@@ -54,8 +53,8 @@ const Home = () => {
             👋🏻
           </span>
         </h1>
-        <h1 className="text-brandColor">
-          I'm <strong>Aaditya Mall</strong>
+        <h1 className="text-white">
+          I'm <strong className="text-brandColor">Aaditya Mall</strong>
         </h1>
         <div className="h-[40px] text-xl py-[20px]">
           <Typewriter
@@ -87,8 +86,7 @@ const Home = () => {
             <Col md={6} className="flex justify-center items-center">
               <Button
                 variant="contained"
-                color="primary"
-                className="w-full max-w-500 m-2"
+                className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
                 onClick={() => navigate("/resume")} // Use navigate function for routing
               >
                 <Description />
@@ -98,14 +96,21 @@ const Home = () => {
             <Col md={6} className="flex justify-center items-center">
               <Button
                 variant="contained"
-                color="primary"
-                className="w-full max-w-500 m-2"
+                className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
               >
                 <Call />
                 Contact
               </Button>
             </Col>
           </Row>
+        </div>
+        <div className="flex justify-center items-center mt-[20px]">
+          <div className="relative">
+            <ArrowDownward
+              // fontSize="large"
+              className="text-white animate-bounce text-5xl"
+            />
+          </div>
         </div>
       </Container>
     </div>
