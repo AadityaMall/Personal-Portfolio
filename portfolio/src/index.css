@@ -9,25 +9,25 @@ body {
 }
 /* Style the scrollbar */
 body::-webkit-scrollbar {
-  width: 10px; /* width of the scrollbar */
+  width: 7px; /* width of the scrollbar */
 }
 
 /* Track */
 body::-webkit-scrollbar-track {
   background: #f1f1f1; /* color of the scrollbar track */
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
   background: #2fcbe071; /* color of the scrollbar thumb */
-  border-radius: 20px; /* roundness of the thumb */
+  border-radius: 5px; /* roundness of the thumb */
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
   background: #2fcbe0; /* color of the thumb on hover */
-  border-radius: 20px;
+  border-radius: 5px;
 }
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
   position: absolute !important;
@@ -132,7 +132,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* FadeInSection.css */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(40px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 

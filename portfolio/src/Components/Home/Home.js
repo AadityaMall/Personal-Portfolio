@@ -6,7 +6,8 @@ import {
   GitHub,
   LinkedIn,
   Description,
-  Call,ArrowDownward
+  Call,
+  ArrowDownward,
 } from "@mui/icons-material";
 import { SvgIcon, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
@@ -29,91 +30,137 @@ const iconSX = {
 };
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [ref, isVisible] = useIntersectionObserver({
+    threshold: 0.1, // Adjust as needed
+  });
+  const [refOne, isVisibleOne] = useIntersectionObserver({
     threshold: 0.1, // Adjust as needed
   });
 
   return (
-    <div
-      className={`flex justify-center overflow-hidden items-center h-screen fade-in-section ${isVisible ? "visible" : ""
+    <>
+      <div
+        className={`flex justify-center overflow-hidden items-center h-screen fade-in-section ${
+          isVisible ? "visible" : ""
         }`}
-      ref={ref}
-    >
-      <Container className="flex flex-col justify-evenly items-center h-[90%]">
-        <img
-          src="/images/HomePage.png"
-          alt="home pic"
-          className="img-fluid max-h-48 z-100"
-          loading="lazy"
-        />
-        <h1 className="heading text-white">
-          Hi There!{" "}
-          <span className="wave" role="img" aria-labelledby="wave">
-            👋🏻
-          </span>
-        </h1>
-        <h1 className="text-white">
-          I'm <strong className="text-brandColor">Aaditya Mall</strong>
-        </h1>
-        <div className="h-[40px] text-xl py-[20px]">
-          <Typewriter
-            options={{
-              strings: ["Student", "Freelancer", "MERN Stack Developer"],
-              autoStart: true,
-              loop: true,
-              deleteSpeed: 20,
-            }}
+        ref={ref}
+      >
+        <Container className="flex flex-col justify-evenly items-center h-[90%]">
+          <img
+            src="/images/HomePage.png"
+            alt="home pic"
+            className="img-fluid max-h-48 z-100"
+            loading="lazy"
           />
-        </div>
-
-        <div className="social-media mt-[40px]">
-          <Link to={`https://www.instagram.com/aaditya.mall`}>
-            <Instagram sx={iconSX} />
-          </Link>
-          <Link to={`https://www.hackerrank.com/profile/aadityarmall`}>
-            <HackerrankIcon sx={iconSX} />
-          </Link>
-          <Link to={`https://www.linkedin.com/in/aaditya-mall-b45a48216/`}>
-            <LinkedIn sx={iconSX} />
-          </Link>
-          <Link to={`https://github.com/AadityaMall`}>
-            <GitHub sx={iconSX} />
-          </Link>
-        </div>
-        <div className="w-[100%] max-w-500">
-          <Row>
-            <Col md={6} className="flex justify-center items-center">
-              <Button
-                variant="contained"
-                className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
-                onClick={() => navigate("/resume")} // Use navigate function for routing
-              >
-                <Description />
-                Resume
-              </Button>
-            </Col>
-            <Col md={6} className="flex justify-center items-center">
-              <Button
-                variant="contained"
-                className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
-              >
-                <Call />
-                Contact
-              </Button>
-            </Col>
-          </Row>
-        </div>
-        <div className="flex justify-center items-center mt-[20px]">
-          <div className="relative">
-            <ArrowDownward
-              // fontSize="large"
-              className="text-white animate-bounce text-5xl"
+          <h1 className="heading text-white">
+            Hi There!{" "}
+            <span className="wave" role="img" aria-labelledby="wave">
+              👋🏻
+            </span>
+          </h1>
+          <h1 className="text-white">
+            I'm <strong className="text-brandColor">Aaditya Mall</strong>
+          </h1>
+          <div className="h-[40px] text-xl py-[20px]">
+            <Typewriter
+              options={{
+                strings: ["Student", "Freelancer", "MERN Stack Developer"],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 20,
+              }}
             />
           </div>
-        </div>
-      </Container>
-    </div>
+
+          <div className="social-media mt-[40px]">
+            <Link to={`https://www.instagram.com/aaditya.mall`}>
+              <Instagram sx={iconSX} />
+            </Link>
+            <Link to={`https://www.hackerrank.com/profile/aadityarmall`}>
+              <HackerrankIcon sx={iconSX} />
+            </Link>
+            <Link to={`https://www.linkedin.com/in/aaditya-mall-b45a48216/`}>
+              <LinkedIn sx={iconSX} />
+            </Link>
+            <Link to={`https://github.com/AadityaMall`}>
+              <GitHub sx={iconSX} />
+            </Link>
+          </div>
+          <div className="w-[100%] max-w-500">
+            <Row>
+              <Col md={6} className="flex justify-center items-center">
+                <Button
+                  variant="contained"
+                  className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
+                  onClick={() => navigate("/resume")} // Use navigate function for routing
+                >
+                  <Description />
+                  Resume
+                </Button>
+              </Col>
+              <Col md={6} className="flex justify-center items-center">
+                <Button
+                  variant="contained"
+                  className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
+                >
+                  <Call />
+                  Contact
+                </Button>
+              </Col>
+            </Row>
+          </div>
+          <div className="flex justify-center items-center mt-[20px]">
+            <div className="relative">
+              <ArrowDownward
+                // fontSize="large"
+                className="text-white animate-bounce text-5xl"
+              />
+            </div>
+          </div>
+        </Container>
+      </div>
+      <div
+        className={`flex justify-center overflow-hidden items-start fade-in-section ${
+          isVisibleOne ? "visible" : ""
+        }`}
+        ref={refOne}
+      >
+        <Container className="m-3 mt-0 mb-0">
+          <Row className="mt-[60px]">
+            <Col
+              md={8}
+              className="flex flex-column justify-center items-center"
+            >
+              <h1 className="text-brandColor">About Me</h1>
+
+              <p className="text-white m-3 text-justify text-xl">
+                I am currently pursuing a Bachelor of Technology degree in
+                Computer Science, specializing in Artificial Intelligence. I am
+                a creative and motivated individual with strong skills in
+                mathematics, logic, and coding. My academic and personal
+                experiences have instilled in me a passion for technology and
+                innovation. <br /><br /> I am actively expanding my knowledge and expertise
+                in the MERN stack (MongoDB, Express.js, React, Node.js), which
+                is enhancing my capabilities in full-stack web development. My
+                enthusiasm for data science drives me to continuously explore
+                and learn new techniques and methodologies to analyze and
+                interpret complex data sets. <br /><br /> I am eager to apply my skills in
+                real-world projects and look forward to embracing new challenges
+                and opportunities in the field of technology.
+              </p>
+            </Col>
+            <Col md={4} className="flex justify-center items-center">
+            <img
+            src="/images/Aaditya.jpg"
+            alt="Aaditya Mall"
+            className="img-fluid max-h-80 z-100 rounded"
+            loading="lazy"
+          /></Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 
