@@ -109,6 +109,19 @@ function NavBar() {
                 Resume
               </NavLink>
             </Nav.Item>
+            <Nav.Item>
+              <NavLink
+                to="/resume"
+                className={({ isActive }) =>
+                  isActive
+                    ? "nav-link pr-4 pl-4 active"
+                    : "nav-link  pr-4 pl-4"
+                }
+                onClick={() => updateExpanded(false)}
+              >
+                Contact
+              </NavLink>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

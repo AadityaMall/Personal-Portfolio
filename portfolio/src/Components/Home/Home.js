@@ -9,17 +9,24 @@ import {
   Call,
   ArrowDownward,
 } from "@mui/icons-material";
-import { SvgIcon, Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import useIntersectionObserver from "../../useIntersectionObserver";
 import { Row, Col } from "react-bootstrap";
-
-// Custom Hackerrank icon using createSvgIcon
-const HackerrankIcon = (props) => (
-  <SvgIcon {...props} viewBox="0 0 448 512">
-    <path d="M454.843 141.001c-13.019-22.417-172.832-115-198.859-115-26.019 0-185.895 92.351-198.84 115-12.947 22.649-13.019 207.358 0 230.009 13.018 22.639 172.839 114.989 198.84 114.989 26 0 185.841-92.466 198.851-114.999 13.007-22.533 13.016-207.583.008-229.999zM309.862 398.15c-3.559 0-36.756-32.137-34.141-34.762.781-.78 5.625-1.328 15.768-1.644 0-23.564.53-61.622.844-77.553.038-1.814-.395-3.081-.395-5.256h-71.812c0 6.379-.412 32.523 1.232 65.479.205 4.078-1.42 5.353-5.158 5.335-9.102-.025-18.211-.099-27.321-.071-3.683.009-5.274-1.374-5.157-5.488.826-30.043 2.66-75.488-.134-191.07v-2.849c-8.688-.314-14.717-.862-15.508-1.652-2.624-2.624 31.032-34.76 34.581-34.76 3.558 0 36.989 32.145 34.383 34.76-.782.781-7.098 1.338-15.067 1.652v2.84c-2.174 23.135-1.823 71.506-2.362 94.686h72.107c0-4.089.351-31.212-1.077-75.145-.091-3.047.853-4.646 3.781-4.672 9.945-.072 19.9-.117 29.855-.055 3.108.019 4.105 1.546 4.043 4.834-3.28 171.861-.594 159.867-.594 188.975 7.97.315 15.112.864 15.895 1.655 2.588 2.615-30.205 34.761-33.763 34.761z" />
-  </SvgIcon>
-);
+import {
+  HackerrankIcon,
+  MongoDBIcon,
+  JSIcon,
+  NodeJsIcon,
+  ReactIcon,
+  CppIcon,
+  PythonIcon,
+  JavaIcon,
+  MySQLIcon,
+  VSCodeIcon,
+  Postman,
+  Windows,
+} from "../Layout/SvgIcons";
 
 const iconSX = {
   fontSize: "50px",
@@ -27,6 +34,12 @@ const iconSX = {
   transition: ".1s ease-in-out",
   margin: "15px",
   ":hover": { color: "#2fcbe0", cursor: "pointer" },
+};
+const skillIconsSX = {
+  fontSize: "80px",
+  color: "white",
+  transition: ".1s ease-in-out",
+  margin: "15px",
 };
 
 const Home = () => {
@@ -37,6 +50,20 @@ const Home = () => {
   const [refOne, isVisibleOne] = useIntersectionObserver({
     threshold: 0.1, // Adjust as needed
   });
+  const [refTwo, isVisibleTwo] = useIntersectionObserver({
+    threshold: 0.1, // Adjust as needed
+  });
+
+  const handleLinkClick = (event, id) => {
+    event.preventDefault();
+    const section = document.getElementById(id);
+    const offset = 0; // Adjust this value as needed
+
+    window.scrollTo({
+      top: section.offsetTop - offset,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -74,18 +101,26 @@ const Home = () => {
           </div>
 
           <div className="social-media mt-[40px]">
-            <Link to={`https://www.instagram.com/aaditya.mall`}>
-              <Instagram sx={iconSX} />
-            </Link>
-            <Link to={`https://www.hackerrank.com/profile/aadityarmall`}>
-              <HackerrankIcon sx={iconSX} />
-            </Link>
-            <Link to={`https://www.linkedin.com/in/aaditya-mall-b45a48216/`}>
-              <LinkedIn sx={iconSX} />
-            </Link>
-            <Link to={`https://github.com/AadityaMall`}>
-              <GitHub sx={iconSX} />
-            </Link>
+            <Tooltip title="Instagram">
+              <Link to={`https://www.instagram.com/aaditya.mall`}>
+                <Instagram sx={iconSX} />
+              </Link>
+            </Tooltip>
+            <Tooltip title="Hackerrank">
+              <Link to={`https://www.hackerrank.com/profile/aadityarmall`}>
+                <HackerrankIcon sx={iconSX} />
+              </Link>
+            </Tooltip>
+            <Tooltip title="LinkedIn">
+              <Link to={`https://www.linkedin.com/in/aaditya-mall-b45a48216/`}>
+                <LinkedIn sx={iconSX} />
+              </Link>
+            </Tooltip>
+            <Tooltip title="Github">
+              <Link to={`https://github.com/AadityaMall`}>
+                <GitHub sx={iconSX} />
+              </Link>
+            </Tooltip>
           </div>
           <div className="w-[100%] max-w-500">
             <Row>
@@ -111,7 +146,11 @@ const Home = () => {
             </Row>
           </div>
           <div className="flex justify-center items-center mt-[20px]">
-            <div className="relative">
+            <div
+              className="relative"
+              onClick={(e) => handleLinkClick(e, "aboutSectionStart")}
+              role="button"
+            >
               <ArrowDownward
                 // fontSize="large"
                 className="text-white animate-bounce text-5xl"
@@ -121,13 +160,14 @@ const Home = () => {
         </Container>
       </div>
       <div
-        className={`flex justify-center overflow-hidden items-start fade-in-section ${
+        className={`flex justify-center overflow-hidden items-center min-h-screen fade-in-section ${
           isVisibleOne ? "visible" : ""
         }`}
         ref={refOne}
+        id="aboutSectionStart"
       >
         <Container className="m-3 mt-0 mb-0">
-          <Row className="mt-[60px]">
+          <Row className="mt-[80px]">
             <Col
               md={8}
               className="flex flex-column justify-center items-center"
@@ -136,27 +176,175 @@ const Home = () => {
 
               <p className="text-white m-3 text-justify text-xl">
                 I am currently pursuing a Bachelor of Technology degree in
-                Computer Science, specializing in Artificial Intelligence. I am
-                a creative and motivated individual with strong skills in
-                mathematics, logic, and coding. My academic and personal
-                experiences have instilled in me a passion for technology and
-                innovation. <br /><br /> I am actively expanding my knowledge and expertise
-                in the MERN stack (MongoDB, Express.js, React, Node.js), which
-                is enhancing my capabilities in full-stack web development. My
-                enthusiasm for data science drives me to continuously explore
-                and learn new techniques and methodologies to analyze and
-                interpret complex data sets. <br /><br /> I am eager to apply my skills in
-                real-world projects and look forward to embracing new challenges
-                and opportunities in the field of technology.
+                Computer Science from SVKM's NMIMS University, specializing in
+                Artificial Intelligence. I am a creative and motivated
+                individual with strong skills in mathematics, logic, and coding.
+                My academic and personal experiences have instilled in me a
+                passion for technology and innovation. <br />
+                <br /> I am actively expanding my knowledge and expertise in the{" "}
+                <strong className="text-brandColor">
+                  MERN stack (MongoDB, Express.js, React, Node.js){" "}
+                </strong>{" "}
+                , which is enhancing my capabilities in full-stack web
+                development. My enthusiasm for data science drives me to
+                continuously explore and learn new techniques and methodologies
+                to analyze and interpret complex data sets. <br />
+                <br /> I am eager to apply my skills in real-world projects and
+                look forward to embracing new challenges and opportunities in
+                the field of technology.
               </p>
             </Col>
             <Col md={4} className="flex justify-center items-center">
-            <img
-            src="/images/Aaditya.JPG"
-            alt="Aaditya Mall"
-            className="img-fluid max-h-80 z-100 rounded"
-            loading="lazy"
-          /></Col>
+              <img
+                src="/images/Aaditya.JPG"
+                alt="Aaditya Mall"
+                className="img-fluid max-h-80 z-100 rounded"
+                loading="lazy"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div
+        className={`flex justify-center flex-column overflow-hidden items-center min-h-screen fade-in-section ${
+          isVisibleTwo ? "visible" : ""
+        }`}
+        ref={refTwo}
+        id="aboutSectionStart"
+      >
+        <Container className="m-3 mt-4 mb-0 flex flex-column justify-center items-center">
+          <h1 className="text-white text-center">
+            Professional <strong className="text-brandColor">Skillset</strong>
+          </h1>
+          <Row className="mt-[20px]">
+            <Col xs={6} md={3}>
+              <Tooltip title="MongoDB">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <MongoDBIcon sx={skillIconsSX} />
+                  <Tooltip title="Beginner">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[60%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={3}>
+              <Tooltip title="JavaScript">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <JSIcon sx={skillIconsSX} />
+                  <Tooltip title="Intermidiate">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[85%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <Tooltip title="Node Js">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <NodeJsIcon sx={skillIconsSX} />
+                  <Tooltip title="Intermidiate">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <Tooltip title="React">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <ReactIcon sx={skillIconsSX} />
+                  <Tooltip title="Intermidiate">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <Tooltip title="C++">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <CppIcon sx={skillIconsSX} />
+                  <Tooltip title="Intermidiate">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <Tooltip title="Python">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <PythonIcon sx={skillIconsSX} />
+                  <Tooltip title="Intermidiate">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={3}>
+              <Tooltip title="Java">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <JavaIcon sx={skillIconsSX} />
+                  <Tooltip title="Beginner">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[50%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={3}>
+              <Tooltip title="SQL">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <MySQLIcon sx={skillIconsSX} />
+                  <Tooltip title="Beginner">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[50%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="m-3 mt-5 mb-0 flex flex-column justify-center items-center">
+          <h1 className="text-white text-center">
+            Professional <strong className="text-brandColor">Toolset</strong>
+          </h1>
+          <Row className="mt-[20px]">
+            <Col xs={6} md={4}>
+              <Tooltip title="Vs Code">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <VSCodeIcon sx={skillIconsSX} />
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={4}>
+              <Tooltip title="Postman">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <Postman sx={skillIconsSX} />
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={4}>
+              <Tooltip title="Windows">
+                <div className="relative text-4xl p-[20px] m-[15px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <Windows sx={skillIconsSX} />
+                </div>
+              </Tooltip>
+            </Col>
           </Row>
         </Container>
       </div>
