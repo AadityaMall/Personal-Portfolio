@@ -111,12 +111,10 @@ function NavBar() {
             </Nav.Item>
             <Nav.Item>
               <NavLink
-                to="/resume"
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link pr-4 pl-4 active"
-                    : "nav-link  pr-4 pl-4"
-                }
+                to="/#contact"
+                className=
+                "pr-4 nav-link not-active"
+
                 onClick={() => updateExpanded(false)}
               >
                 Contact
