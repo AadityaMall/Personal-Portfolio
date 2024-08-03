@@ -15,8 +15,10 @@ const iconSX = {
 
 function Footer() {
     let year = "2024";
+
+    
     return (
-        <Container fluid className="footer bg-[#181a27] h-[35px] text-white">
+        <Container fluid className="footer bg-[#181a27] h-auto text-white">
             <Row>
                 <Col md="4" className="flex justify-center items-center">
                     <span>Designed and Developed by Aaditya Mall</span>
@@ -39,7 +41,7 @@ function Footer() {
                         <li className="ml-[10px] mr-[10px]">
                             <a
                                 className="text-white"
-                                href="https://github.com/aadityamall"
+                                href="https://wa.me/+919326430750"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

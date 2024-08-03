@@ -8,6 +8,8 @@ import {
   Description,
   Call,
   ArrowDownward,
+  WhatsApp,
+  MailOutline,
 } from "@mui/icons-material";
 import { Button, Tooltip } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
@@ -26,6 +28,10 @@ import {
   VSCodeIcon,
   Postman,
   Windows,
+  HtmlIcon,
+  CSSIcon,
+  BootstrapIcon,
+  TailwindCssIcon,
 } from "../Layout/SvgIcons";
 
 const iconSX = {
@@ -66,6 +72,18 @@ const Home = () => {
       top: section.offsetTop - offset,
       behavior: "smooth",
     });
+  };
+
+  const handleMailClick = () => {
+    window.location.href = `mailto:aadityarmall@gmail.com`;
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = `tel:+919326430750`;
+  };
+
+  const handleWhatsAppClick = () => {
+    window.location.href = `https://wa.me/+919326430750`;
   };
 
   return (
@@ -244,7 +262,18 @@ const Home = () => {
                 </div>
               </Tooltip>
             </Col>
-
+            <Col xs={6} md={3}>
+              <Tooltip title="React">
+                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <ReactIcon sx={skillIconsSX} />
+                  <Tooltip title="Intermidiate">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
             <Col xs={6} md={3}>
               <Tooltip title="Node Js">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
@@ -259,12 +288,48 @@ const Home = () => {
             </Col>
 
             <Col xs={6} md={3}>
-              <Tooltip title="React">
+              <Tooltip title="HTML">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <ReactIcon sx={skillIconsSX} />
+                  <HtmlIcon sx={skillIconsSX} />
+                  <Tooltip title="Advanced">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[100%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={3}>
+              <Tooltip title="CSS">
+                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <CSSIcon sx={skillIconsSX} />
+                  <Tooltip title="Advanced">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[90%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={3}>
+              <Tooltip title="Bootstrap">
+                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <BootstrapIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
                     <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                      <div className="h-[8px] w-[85%] bg-brandColor"></div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={3}>
+              <Tooltip title="Tailwind CSS">
+                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <TailwindCssIcon sx={skillIconsSX} />
+                  <Tooltip title="Beginner">
+                    <div className="absolute w-full bottom-0 left-0">
+                      <div className="h-[8px] w-[50%] bg-brandColor"></div>
                     </div>
                   </Tooltip>
                 </div>
@@ -352,37 +417,53 @@ const Home = () => {
         </Container>
       </div>
       <div
-        className={`flex justify-center flex-column overflow-hidden items-center min-h-screen fade-in-section ${
+        className={`flex justify-start flex-column items-center mb-[100px] fade-in-section ${
           isVisibleThree ? "visible" : ""
         }`}
         ref={refThree}
         id="contact"
       >
-        <Container className="m-3 mt-5 mb-0 flex flex-column justify-center items-center">
-          <h1 className="text-white text-center">
+        <Container className="p-2 mt-[100px] mb-0 flex flex-column justify-center items-center border-1 border-brandColor rounded-xl">
+          <h1 className="text-white text-center mt-3">
             Contact <strong className="text-brandColor">Me</strong>
           </h1>
-          <Row className="mt-[20px]">
-            <Col xs={6} md={4}>
-              <Tooltip title="Vs Code">
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <VSCodeIcon sx={skillIconsSX} />
-                </div>
-              </Tooltip>
+          <Row className="mt-[20px] w-full m-4">
+            <Col xs={6} md={6} className="flex justify-center items-center">
+              <img
+                src="/images/aadityaBitmoji.png"
+                alt=""
+                className="img-fluid max-h-48 z-100"
+              />
             </Col>
-            <Col xs={6} md={4}>
-              <Tooltip title="Postman">
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <Postman sx={skillIconsSX} />
-                </div>
-              </Tooltip>
-            </Col>
-            <Col xs={6} md={4}>
-              <Tooltip title="Windows">
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <Windows sx={skillIconsSX} />
-                </div>
-              </Tooltip>
+            <Col
+              xs={6}
+              md={6}
+              className="flex flex-column justify-center items-center"
+            >
+              <Button
+                variant="contained"
+                className="w-full max-w-500 m-2 normal-case text-black font-bold bg-[#25d366]"
+                onClick={handleWhatsAppClick} // Use navigate function for routing
+              >
+                <WhatsApp className="mx-[10px]" />
+                Whatsapp
+              </Button>
+              <Button
+                variant="contained"
+                className="w-full max-w-500 m-2 normal-case bg-[#DB4437] text-black font-bold"
+                onClick={handleMailClick} // Use navigate function for routing
+              >
+                <MailOutline className="mx-[10px]" />
+                Mail
+              </Button>
+              <Button
+                variant="contained"
+                className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
+                onClick={handlePhoneClick} // Use navigate function for routing
+              >
+                <Call className="mx-[10px]" />
+                93264300750
+              </Button>
             </Col>
           </Row>
         </Container>
