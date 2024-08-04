@@ -159,6 +159,7 @@ const Home = () => {
                 <Button
                   variant="contained"
                   className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
+                  onClick={(e)=>handleLinkClick(e,"contact")}
                 >
                   <Call />
                   Contact
@@ -416,14 +417,14 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-      <div
-        className={`flex justify-start flex-column items-center mb-[100px] fade-in-section ${
+      <div  
+        className={`flex justify-start w-full md:h-screen md:justify-center md:mb-0 mb-[100px] flex-column items-center fade-in-section ${
           isVisibleThree ? "visible" : ""
         }`}
         ref={refThree}
         id="contact"
       >
-        <Container className="p-2 mt-[100px] mb-0 flex flex-column justify-center items-center border-1 border-brandColor rounded-xl">
+        <Container className="mt-[100px] flex flex-column justify-center items-center border-1 border-brandColor rounded-xl">
           <h1 className="text-white text-center mt-3">
             Contact <strong className="text-brandColor">Me</strong>
           </h1>
@@ -431,7 +432,7 @@ const Home = () => {
             <Col xs={6} md={6} className="flex justify-center items-center">
               <img
                 src="/images/aadityaBitmoji.png"
-                alt=""
+                alt="Bitmoji"
                 className="img-fluid max-h-48 z-100"
               />
             </Col>
@@ -462,7 +463,7 @@ const Home = () => {
                 onClick={handlePhoneClick} // Use navigate function for routing
               >
                 <Call className="mx-[10px]" />
-                93264300750
+                9326430750
               </Button>
             </Col>
           </Row>
