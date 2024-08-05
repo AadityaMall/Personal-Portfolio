@@ -7,8 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #000000 !important;
 }
-.row{
-  --bs-gutter-x:0!important
+circle{
+  color: #2fcbe0!important;
+}
+.MuiStepIcon-text , .css-117w1su-MuiStepIcon-text {
+  fill: black!important;
+}
+.css-8t49rw-MuiStepConnector-line {
+  border-color: #2fcbe0!important;
+  min-height: 15px!important;
 }
 /* Style the scrollbar */
 body::-webkit-scrollbar {
