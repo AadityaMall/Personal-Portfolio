@@ -8,6 +8,7 @@ import {
   BootstrapIcon,
   TailwindCssIcon,
   CppIcon,
+  PythonIcon,
 } from "../Layout/SvgIcons";
 
 import ProjectCard from "./ProjectCard";
@@ -30,8 +31,11 @@ const Projects = () => {
                   NodeJsIcon,
                   BootstrapIcon,
                 ]}
-                previewLink={'https://solestore-ecommerce.onrender.com/'}
-                githubLink={'https://github.com/AadityaMall/SoleStore-Ecommerce'}
+                previewLink={"https://solestore-ecommerce.onrender.com/"}
+                githubLink={
+                  "https://github.com/AadityaMall/SoleStore-Ecommerce"
+                }
+                miniDescription={`A Complete MERN Stack ecommerce website which has various pages and functionalities, example Cart, Wishlist, Checkout, Dashboard for Admin etc `}
               />
             </Col>
             <Col md={4}>
@@ -39,14 +43,10 @@ const Projects = () => {
                 title={"Personal Portfolio"}
                 subtitle={"React Website"}
                 image={"/images/portfolio.png"}
-                iconChips={[
-                  ReactIcon,
-                  JSIcon,
-                  BootstrapIcon,
-                  TailwindCssIcon,
-                ]}
-                previewLink={'https://aadityamall.vercel.app/'}
-                githubLink={'https://github.com/AadityaMall/Personal-Portfolio'}
+                iconChips={[ReactIcon, JSIcon, BootstrapIcon, TailwindCssIcon]}
+                previewLink={"https://aadityamall.vercel.app/"}
+                githubLink={"https://github.com/AadityaMall/Personal-Portfolio"}
+                miniDescription="A personal portfolio website built on React Framework and Tailwind CSS"
               />
             </Col>
             <Col md={4}>
@@ -54,25 +54,17 @@ const Projects = () => {
                 title={"Advanced Calculator"}
                 subtitle={"Python - Tkinter"}
                 image={"/images/calculator.png"}
-                iconChips={[
-                  ReactIcon,
-                  JSIcon,
-                  BootstrapIcon,
-                  TailwindCssIcon,
-                ]}
-                previewLink={'https://aadityamall.vercel.app/'}
-                githubLink={'https://github.com/AadityaMall/Personal-Portfolio'}
+                iconChips={[PythonIcon]}
+                githubLink={"https://github.com/AadityaMall/Personal-Portfolio"}
               />
             </Col>
             <Col md={4}>
               <ProjectCard
                 title={"Contact Book System"}
                 subtitle={"CPP File Management System"}
-                image={"/images/phonebooksystem.png"}
-                iconChips={[
-                  CppIcon,
-                ]}
-                githubLink={'https://github.com/AadityaMall/PhoneBook-System'}
+                image={"/images/CppProject.png"}
+                iconChips={[CppIcon]}
+                githubLink={"https://github.com/AadityaMall/PhoneBook-System"}
               />
             </Col>
           </Row>

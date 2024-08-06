@@ -12,6 +12,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GitHub, Language } from "@mui/icons-material";
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return (
@@ -37,12 +38,15 @@ const ProjectCard = (props) => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
   return (
     <>
       <div className="m-2">
         <Card className="bg-black text-white w-full border-2 border-brandColor rounded-lg">
-          <div className="p-[20px]">
-            <h4 className="font-bold text-3xl">{props.title}</h4>
+          <div className="p-4">
+            <h4 className="font-bold text-3xl overflow-hidden text-ellipsis whitespace-nowrap">
+              {props.title}
+            </h4>
             <h6 className="text-brandColor font-bold">{props.subtitle}</h6>
           </div>
           <div>
@@ -54,20 +58,22 @@ const ProjectCard = (props) => {
             />
           </div>
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              {props.miniDescription}
-            </Typography>
+              <Typography variant="body2" className="my-[10px] mb-3">
+                <span className="text-white flex h-[40px] overflow-hidden text-ellipsis">
+                  {props.miniDescription}
+                </span>
+              </Typography>
             <Container className="w-full block">
               <Row>
                 {props.previewLink && (
-                  <Col md={6} xs={6}>
+                  <Col md={6} xs={6} className="mb-2 mb-md-0">
                     <Link
-                      className="w-full flex justify-center bg-brandColor rounded text-black"
+                      className="flex items-center justify-center w-full bg-brandColor rounded text-black"
                       style={{ textDecoration: "none" }}
                       to={props.previewLink}
                     >
                       <Language />
-                      <strong className="px-[10px] no-underline text-reset">
+                      <strong className="px-2 overflow-hidden text-ellipsis whitespace-nowrap">
                         Live Preview
                       </strong>
                     </Link>
@@ -75,12 +81,12 @@ const ProjectCard = (props) => {
                 )}
                 <Col md={6} xs={6}>
                   <Link
-                    className="w-full text-black flex justify-center bg-brandColor rounded"
+                    className="flex items-center justify-center w-full bg-brandColor rounded text-black"
                     style={{ textDecoration: "none" }}
                     to={props.githubLink}
                   >
-                    <GitHub />{" "}
-                    <strong className="px-[10px] no-underline text-reset">
+                    <GitHub />
+                    <strong className="px-2 overflow-hidden text-ellipsis whitespace-nowrap">
                       Github
                     </strong>
                   </Link>
@@ -91,7 +97,7 @@ const ProjectCard = (props) => {
           <CardActions disableSpacing>
             {props.iconChips &&
               props.iconChips.map((Icon, index) => (
-                <Icon key={index} sx={{ fontSize: 35 }} className="mx-[10px]" />
+                <Icon key={index} sx={{ fontSize: 35 }} className="mx-2" />
               ))}
             <ExpandMore
               expand={expanded}
@@ -104,7 +110,7 @@ const ProjectCard = (props) => {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography paragraph>{props.description}</Typography>
+              <span className="text-white">{props.description}</span>
             </CardContent>
           </Collapse>
         </Card>

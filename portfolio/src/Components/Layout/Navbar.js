@@ -44,7 +44,7 @@ function NavBar() {
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
-            updateExpanded(expand ? false : "expanded");
+            updateExpanded(!expand);
           }}
           className="relative bg-transparent border-transparent"
         >
@@ -58,9 +58,7 @@ function NavBar() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive
-                    ? "nav-link pr-4 pl-4 active"
-                    : "nav-link  pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link  pr-4 pl-4"
                 }
                 onClick={() => updateExpanded(false)}
               >
@@ -72,9 +70,7 @@ function NavBar() {
               <NavLink
                 to="/experience"
                 className={({ isActive }) =>
-                  isActive
-                    ? "nav-link pr-4 pl-4 active"
-                    : "nav-link pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
                 onClick={() => updateExpanded(false)}
               >
@@ -86,9 +82,7 @@ function NavBar() {
               <NavLink
                 to="/project"
                 className={({ isActive }) =>
-                  isActive
-                    ? "nav-link pr-4 pl-4 active"
-                    : "nav-link  pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link  pr-4 pl-4"
                 }
                 onClick={() => updateExpanded(false)}
               >
@@ -100,9 +94,7 @@ function NavBar() {
               <NavLink
                 to="/resume"
                 className={({ isActive }) =>
-                  isActive
-                    ? "nav-link pr-4 pl-4 active"
-                    : "nav-link  pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link  pr-4 pl-4"
                 }
                 onClick={() => updateExpanded(false)}
               >
@@ -112,9 +104,7 @@ function NavBar() {
             <Nav.Item>
               <NavLink
                 to="/#contact"
-                className=
-                "pr-4 nav-link not-active"
-
+                className="pr-4 nav-link not-active"
                 onClick={() => updateExpanded(false)}
               >
                 Contact
