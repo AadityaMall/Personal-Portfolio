@@ -63,6 +63,7 @@ const ProjectCard = (props) => {
                     <Link
                       className="w-full flex justify-center bg-brandColor rounded text-black"
                       style={{ textDecoration: "none" }}
+to={props.previewLink}
                     >
                       <Language />
                       <strong className="px-[10px] no-underline text-reset">
