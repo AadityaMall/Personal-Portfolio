@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Card,
-  CardMedia,
   CardContent,
   CardActions,
   Collapse,
@@ -43,15 +42,17 @@ const ProjectCard = (props) => {
       <div className="m-2">
         <Card className="bg-black text-white w-full border-2 border-brandColor rounded-lg">
           <div className="p-[20px]">
-            <h3 className="font-bold">{props.title}</h3>
+            <h4 className="font-bold text-3xl">{props.title}</h4>
             <h6 className="text-brandColor font-bold">{props.subtitle}</h6>
           </div>
-          <CardMedia
-            component="img"
-            height="194"
-            image={props.image}
-            alt="Project Thumb"
-          />
+          <div>
+            <img
+              src={`${props.image}`}
+              alt="project pic"
+              className="img-fluid z-100 aspect-video object-contain"
+              loading="lazy"
+            />
+          </div>
           <CardContent>
             <Typography variant="body2" color="text.secondary">
               {props.miniDescription}
@@ -63,7 +64,7 @@ const ProjectCard = (props) => {
                     <Link
                       className="w-full flex justify-center bg-brandColor rounded text-black"
                       style={{ textDecoration: "none" }}
-to={props.previewLink}
+                      to={props.previewLink}
                     >
                       <Language />
                       <strong className="px-[10px] no-underline text-reset">
@@ -76,6 +77,7 @@ to={props.previewLink}
                   <Link
                     className="w-full text-black flex justify-center bg-brandColor rounded"
                     style={{ textDecoration: "none" }}
+                    to={props.githubLink}
                   >
                     <GitHub />{" "}
                     <strong className="px-[10px] no-underline text-reset">

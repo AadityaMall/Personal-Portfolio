@@ -6,6 +6,8 @@ import {
   NodeJsIcon,
   ReactIcon,
   BootstrapIcon,
+  TailwindCssIcon,
+  CppIcon,
 } from "../Layout/SvgIcons";
 
 import ProjectCard from "./ProjectCard";
@@ -29,34 +31,48 @@ const Projects = () => {
                   BootstrapIcon,
                 ]}
                 previewLink={'https://solestore-ecommerce.onrender.com/'}
+                githubLink={'https://github.com/AadityaMall/SoleStore-Ecommerce'}
               />
             </Col>
             <Col md={4}>
               <ProjectCard
-                title={"SoleStore Ecommerce"}
-                subtitle={"MERN Stack Website"}
-                image={"/images/solestore.png"}
+                title={"Personal Portfolio"}
+                subtitle={"React Website"}
+                image={"/images/portfolio.png"}
                 iconChips={[
-                  MongoDBIcon,
                   ReactIcon,
                   JSIcon,
-                  NodeJsIcon,
                   BootstrapIcon,
+                  TailwindCssIcon,
                 ]}
+                previewLink={'https://aadityamall.vercel.app/'}
+                githubLink={'https://github.com/AadityaMall/Personal-Portfolio'}
               />
             </Col>
             <Col md={4}>
               <ProjectCard
-                title={"SoleStore Ecommerce"}
-                subtitle={"MERN Stack Website"}
-                image={"/images/solestore.png"}
+                title={"Advanced Calculator"}
+                subtitle={"Python - Tkinter"}
+                image={"/images/calculator.png"}
                 iconChips={[
-                  MongoDBIcon,
                   ReactIcon,
                   JSIcon,
-                  NodeJsIcon,
                   BootstrapIcon,
+                  TailwindCssIcon,
                 ]}
+                previewLink={'https://aadityamall.vercel.app/'}
+                githubLink={'https://github.com/AadityaMall/Personal-Portfolio'}
+              />
+            </Col>
+            <Col md={4}>
+              <ProjectCard
+                title={"Contact Book System"}
+                subtitle={"CPP File Management System"}
+                image={"/images/phonebooksystem.png"}
+                iconChips={[
+                  CppIcon,
+                ]}
+                githubLink={'https://github.com/AadityaMall/PhoneBook-System'}
               />
             </Col>
           </Row>
