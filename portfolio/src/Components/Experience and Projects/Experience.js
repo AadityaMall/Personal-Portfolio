@@ -285,14 +285,6 @@ const Experience = () => {
                   <Stepper orientation="vertical">
                     <Step>
                       <StepLabel>
-                        <span className="text-white font-bold">
-                          SubHead - Competitve Programming ( August 2023 - May
-                          2024 )
-                        </span>
-                      </StepLabel>
-                    </Step>
-                    <Step>
-                      <StepLabel>
                         <span className="text-white">
                           Executive - Competitve Programming ( Sep 2022 - August
                           2023 ){" "}
