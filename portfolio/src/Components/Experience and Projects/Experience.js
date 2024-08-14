@@ -1,13 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { LocationOnOutlined } from "@mui/icons-material";
-import {
-  Chip,
-  Stack,
-  Stepper,
-  Step,
-  StepLabel,
-} from "@mui/material";
+import { Chip, Stack, Stepper, Step, StepLabel } from "@mui/material";
 import {
   MongoDBIcon,
   JSIcon,
@@ -16,7 +10,6 @@ import {
   PHPIcon,
 } from "../Layout/SvgIcons";
 const Experience = () => {
-
   return (
     <>
       <div className="min-h-screen">
@@ -225,7 +218,7 @@ const Experience = () => {
               <Col md={4} className="flex justify-center items-center">
                 <img
                   src="/images/IET.png"
-                  className="text-center bg-white img-fluid w-[60%] m-4 p-2 rounded"
+                  className="text-center bg-white img-fluid w-[40%] m-4 p-2 rounded"
                   alt=""
                 />
               </Col>
@@ -270,7 +263,7 @@ const Experience = () => {
               <Col md={4} className="flex justify-center items-center">
                 <img
                   src="/images/GDSC.png"
-                  className="text-center bg-white img-fluid w-[80%] m-4 p-2 rounded"
+                  className="text-center bg-white img-fluid w-[50%] m-4 p-2 rounded"
                   alt=""
                 />
               </Col>
@@ -288,6 +281,43 @@ const Experience = () => {
                         <span className="text-white">
                           Executive - Competitve Programming ( Sep 2022 - August
                           2023 ){" "}
+                        </span>
+                      </StepLabel>
+                    </Step>
+                  </Stepper>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div className="mx-[40px] my-[10px] border-2 border-brandColor rounded">
+            <Row className="py-[20px]">
+              <Col md={4} className="flex justify-center items-center">
+                <img
+                  src="/images/tq.jpg"
+                  className="text-center bg-white img-fluid w-[20%] m-4 p-2 rounded"
+                  alt=""
+                />
+              </Col>
+              <Col
+                md={8}
+                className="flex flex-column justify-center md:items-start text-white px-[10px] md:px-[20px]"
+              >
+                <h5 className="text-brandColor font-bold">
+                  Taqeeq ( Annual Techfest , NMIMS MPSTME)
+                </h5>
+                <div className="px-[15px]">
+                  <Stepper orientation="vertical">
+                    <Step>
+                      <StepLabel>
+                        <span className="text-white">
+                          Sub-Head - Publicity ( Sep 2023 - August 2024 ){" "}
+                        </span>
+                      </StepLabel>
+                    </Step>
+                    <Step>
+                      <StepLabel>
+                        <span className="text-white">
+                          Executive - Publicity ( Sep 2022 - August 2023 ){" "}
                         </span>
                       </StepLabel>
                     </Step>

@@ -240,7 +240,6 @@ const Home = () => {
           </h1>
           <Row className="mt-[20px]">
             <Col xs={6} md={3}>
-              <Tooltip title="MongoDB">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <MongoDBIcon sx={skillIconsSX} />
                   <Tooltip title="Beginner">
@@ -249,10 +248,8 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="JavaScript">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <JSIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
@@ -261,68 +258,57 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="React">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <ReactIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
                     <div className="absolute w-full bottom-0 left-0">
                       <div className="h-[8px] w-[75%] bg-brandColor"></div>
                     </div>
-                  </Tooltip>
-                </div>
               </Tooltip>
+                </div>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="Node Js">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <NodeJsIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
                     <div className="absolute w-full bottom-0 left-0">
                       <div className="h-[8px] w-[75%] bg-brandColor"></div>
                     </div>
-                  </Tooltip>
-                </div>
               </Tooltip>
+                </div>
             </Col>
 
             <Col xs={6} md={3}>
-              <Tooltip title="HTML">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <HtmlIcon sx={skillIconsSX} />
                   <Tooltip title="Advanced">
                     <div className="absolute w-full bottom-0 left-0">
                       <div className="h-[8px] w-[100%] bg-brandColor"></div>
                     </div>
-                  </Tooltip>
-                </div>
               </Tooltip>
+                </div>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="CSS">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <CSSIcon sx={skillIconsSX} />
                   <Tooltip title="Advanced">
                     <div className="absolute w-full bottom-0 left-0">
                       <div className="h-[8px] w-[90%] bg-brandColor"></div>
                     </div>
-                  </Tooltip>
-                </div>
               </Tooltip>
+                </div>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="Bootstrap">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <BootstrapIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
                     <div className="absolute w-full bottom-0 left-0">
                       <div className="h-[8px] w-[85%] bg-brandColor"></div>
                     </div>
-                  </Tooltip>
-                </div>
               </Tooltip>
+                </div>
             </Col>
             <Col xs={6} md={3}>
               <Tooltip title="Tailwind CSS">
@@ -338,7 +324,6 @@ const Home = () => {
             </Col>
 
             <Col xs={6} md={3}>
-              <Tooltip title="C++">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <CppIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
@@ -347,11 +332,9 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
             </Col>
 
             <Col xs={6} md={3}>
-              <Tooltip title="Python">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <PythonIcon sx={skillIconsSX} />
                   <Tooltip title="Intermidiate">
@@ -360,10 +343,8 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="Java">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <JavaIcon sx={skillIconsSX} />
                   <Tooltip title="Beginner">
@@ -372,10 +353,8 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="SQL">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <MySQLIcon sx={skillIconsSX} />
                   <Tooltip title="Beginner">
@@ -384,7 +363,6 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
             </Col>
           </Row>
         </Container>

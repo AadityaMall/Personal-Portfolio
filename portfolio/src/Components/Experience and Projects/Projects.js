@@ -56,6 +56,19 @@ const Projects = () => {
                 image={"/images/calculator.png"}
                 iconChips={[PythonIcon]}
                 githubLink={"https://github.com/AadityaMall/Personal-Portfolio"}
+                description={`Calculator that performs some basic and advanced functions
+
+This calculator is created with the help of language python.
+
+This calculator when started pops up on a screen where we can calculate basic commands like add, subtract, multiply, divide and percentage. There are three other modes added to this calculator, namely - Scientific Salculator , Audio Calculator and Voice Operated Calculator.
+
+Scientific Calculator mode enables functions like permutations, Combinations, power, cuberoot, factorial etc.
+
+Audio calculator reads out whatever calculation we enter as well as its answer.
+
+Voice operated Calculator enables user to use his/her own voice to give commands to calculator which then provides the answer.
+
+we have used various modules for it which we downloaded like`}
               />
             </Col>
             <Col md={4}>
@@ -65,6 +78,20 @@ const Projects = () => {
                 image={"/images/CppProject.png"}
                 iconChips={[CppIcon]}
                 githubLink={"https://github.com/AadityaMall/PhoneBook-System"}
+                miniDescription={`This is a demonstration as well as a layout of famous just dial app and its interface where a user can access contacts database of different genre.
+
+User can search as well as browse all the contacts from the database.
+
+Only admins can add or delete contacts from database.
+
+To access the admin abilities, valid user email and password is required.`}
+                description={`This is a demonstration as well as a layout of famous just dial app and its interface where a user can access contacts database of different genre.
+
+User can search as well as browse all the contacts from the database.
+
+Only admins can add or delete contacts from database.
+
+To access the admin abilities, valid user email and password is required.`}
               />
             </Col>
           </Row>
