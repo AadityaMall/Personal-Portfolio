@@ -58,11 +58,13 @@ const ProjectCard = (props) => {
             />
           </div>
           <CardContent>
-              <Typography variant="body2" className="my-[10px] mb-3">
-                <span className="text-white flex h-[40px] overflow-hidden text-ellipsis">
-                  {props.miniDescription}
-                </span>
-              </Typography>
+            <Typography variant="body2" className="my-[10px] mb-3">
+              <div className="overflow-hidden text-ellipsis whitespace-nowrap">
+                <span
+                  dangerouslySetInnerHTML={{ __html: props.description }}
+                ></span>
+              </div>
+            </Typography>
             <Container className="w-full block">
               <Row>
                 {props.previewLink && (
@@ -110,7 +112,16 @@ const ProjectCard = (props) => {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <span className="text-white">{props.description}</span>
+              <div>
+                <span
+                  dangerouslySetInnerHTML={{ __html: props.description }}
+                ></span>
+                <ul className="marker:text-brandColor list-disc text-left my-[10px]">
+                  {props.bulletPoints && props.bulletPoints.map((point,index)=>(
+                    <li dangerouslySetInnerHTML={{ __html: point }}></li>
+                  ))}
+                </ul>
+              </div>
             </CardContent>
           </Collapse>
         </Card>
