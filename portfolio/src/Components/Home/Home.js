@@ -311,7 +311,7 @@ const Home = () => {
                 </div>
             </Col>
             <Col xs={6} md={3}>
-              <Tooltip title="Tailwind CSS">
+              
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <TailwindCssIcon sx={skillIconsSX} />
                   <Tooltip title="Beginner">
@@ -320,7 +320,7 @@ const Home = () => {
                     </div>
                   </Tooltip>
                 </div>
-              </Tooltip>
+              
             </Col>
 
             <Col xs={6} md={3}>
