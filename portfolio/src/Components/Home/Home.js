@@ -384,6 +384,7 @@ const Home = () => {
                   <Postman sx={skillIconsSX} />
                 </div>
               </Tooltip>
+          </Col>
           </Row>
         </Container>
       </div>
