@@ -190,6 +190,14 @@ const Home = () => {
       >
         <Container className="m-3 mt-0 mb-0">
           <Row className="mt-[80px]">
+           <Col md={4} className="flex justify-center items-center">
+              <img
+                src="/images/Aaditya.JPG"
+                alt="Aaditya Mall"
+                className="img-fluid max-h-80 z-100 rounded"
+                loading="lazy"
+              />
+            </Col>
             <Col
               md={8}
               className="flex flex-column justify-center items-center"
@@ -215,14 +223,6 @@ const Home = () => {
                 look forward to embracing new challenges and opportunities in
                 the field of technology.
               </p>
-            </Col>
-            <Col md={4} className="flex justify-center items-center">
-              <img
-                src="/images/Aaditya.JPG"
-                alt="Aaditya Mall"
-                className="img-fluid max-h-80 z-100 rounded"
-                loading="lazy"
-              />
             </Col>
           </Row>
         </Container>
