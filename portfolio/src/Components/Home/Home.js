@@ -384,14 +384,6 @@ const Home = () => {
                   <Postman sx={skillIconsSX} />
                 </div>
               </Tooltip>
-            </Col>
-            <Col xs={6} md={4}>
-              <Tooltip title="Windows">
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <Windows sx={skillIconsSX} />
-                </div>
-              </Tooltip>
-            </Col>
           </Row>
         </Container>
       </div>
