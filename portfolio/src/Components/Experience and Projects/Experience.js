@@ -146,29 +146,32 @@ const Experience = () => {
                   </span>
                 </Row>
                 <Row className="mb-[10px]">
+                 
+
+ 
+
                   <span className="text-center flex justify-center items-center text-sm">
                     <ul className="marker:text-brandColor list-disc text-left">
                       <li>
-                        As a product intern, I worked on the SUPER APP initial
-                        stage where 2 Major Banking Apps were merging into one.{" "}
+                        Conducted Competition Analysis for Super App 
+Analyzed competitive landscape for a super app combining MOBank and MyCard App 
                       </li>
                       <li>
-                        I crafted the
+                        Designed  
                         <strong className="text-brandColor">
                           {" "}
                           Information Architecture{" "}
                         </strong>{" "}
-                        and{" "}
+                        and 
                         <strong className="text-brandColor">
-                          Flowcharted
+                          Flowcharts
                         </strong>{" "}
-                        both the apps to ensure that there is no loss of
-                        features and data in the nre SUPER APP.
+                         to outline and optimize user interactions and data flow.
                       </li>
                       <li>
-                        I also played a role in benchmarking and analysing
-                        competition for the app and providing inputs for the
-                        initial stage of designing.
+
+Provided Product Design Inputs 
+Contributed to UI (User Interface) and UX (User Experience) design based on analysis and research findings. 
                       </li>
                     </ul>
                   </span>
