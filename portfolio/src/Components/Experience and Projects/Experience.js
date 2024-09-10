@@ -164,9 +164,9 @@ Analyzed competitive landscape for a super app combining MOBank and MyCard App
                         </strong>{" "}
                         and 
                         <strong className="text-brandColor">
-                          Flowcharts
-                        </strong>{" "}
-                         to outline and optimize user interactions and data flow.
+                           Flowcharts
+                        </strong> {" "}
+                          to outline and optimize user interactions and data flow.
                       </li>
                       <li>
 
