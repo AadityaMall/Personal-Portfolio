@@ -37,6 +37,10 @@ function NavBar() {
     }
   }
 
+  const handleToggleClick = () => {
+    updateExpanded(!expand);
+  };
+
   return (
     <Navbar
       expanded={expand}
@@ -55,15 +59,18 @@ function NavBar() {
         >
           <h1 className="text-brandColor text-3xl">{`<Aaditya Mall/>`}</h1>
         </Navbar.Brand>
-        <Navbar.Toggle
+        {/* Custom button for toggling navbar */}
+        <button
           aria-controls="responsive-navbar-nav"
-          className="relative bg-transparent border-transparent"
+          aria-expanded={expand}
+          onClick={handleToggleClick}
+          className="relative bg-transparent border-transparent p-2"
           ref={navButton}
         >
-          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100 transition-transform duration-350 ease-in-out"></span>
-          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100"></span>
-          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100 transition-transform duration-350 ease-in-out"></span>
-        </Navbar.Toggle>
+          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
+          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
+          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
+        </button>
         <Navbar.Collapse id="responsive-navbar-nav" ref={linksContainerRef}>
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
