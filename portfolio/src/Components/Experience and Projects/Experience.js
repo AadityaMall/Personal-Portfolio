@@ -146,32 +146,31 @@ const Experience = () => {
                   </span>
                 </Row>
                 <Row className="mb-[10px]">
-                 
 
- 
+
+
 
                   <span className="text-center flex justify-center items-center text-sm">
                     <ul className="marker:text-brandColor list-disc text-left">
                       <li>
-                        Conducted Competition Analysis for Super App 
-Analyzed competitive landscape for a super app combining MOBank and MyCard App 
+                        Conducted Competition Analysis for Super App
+                        Analyzed competitive landscape for a super app combining MOBank and MyCard App
                       </li>
                       <li>
-                        Designed  
+                        Designed
                         <strong className="text-brandColor">
                           {" "}
                           Information Architecture{" "}
                         </strong>{" "}
-                        and 
+                        and
                         <strong className="text-brandColor">
-                           Flowcharts
+                          Flowcharts
                         </strong> {" "}
-                          to outline and optimize user interactions and data flow.
+                         to outline and optimize user interactions and data flow.
                       </li>
                       <li>
-
-Provided Product Design Inputs 
-Contributed to UI (User Interface) and UX (User Experience) design based on analysis and research findings. 
+                        Provided Product Design Inputs
+                        Contributed to UI (User Interface) and UX (User Experience) design based on analysis and research findings.
                       </li>
                     </ul>
                   </span>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -8,20 +8,30 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  function scrollHandler() {
+  const scrollHandler = useCallback(() => {
     if (window.scrollY >= 20) {
       updateNavbar(true);
     } else {
       updateNavbar(false);
     }
-  }
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
+    const handleScroll = () => {
+      scrollHandler();
     };
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollHandler]);
+
+  // Function to handle nav link click and close the navbar
+  const handleNavLinkClick = () => {
+    if (expand) {
+      updateExpanded(false);
+    }
+  };
 
   return (
     <Navbar
@@ -43,9 +53,7 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(!expand);
-          }}
+          onClick={() => updateExpanded(!expand)}
           className="relative bg-transparent border-transparent"
         >
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100 transition-transform duration-350 ease-in-out"></span>
@@ -58,9 +66,9 @@ function NavBar() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link  pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={() => updateExpanded(false)}
+                onClick={handleNavLinkClick}
               >
                 Home
               </NavLink>
@@ -72,7 +80,7 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={() => updateExpanded(false)}
+                onClick={handleNavLinkClick}
               >
                 Experience
               </NavLink>
@@ -82,9 +90,9 @@ function NavBar() {
               <NavLink
                 to="/project"
                 className={({ isActive }) =>
-                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link  pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={() => updateExpanded(false)}
+                onClick={handleNavLinkClick}
               >
                 Projects
               </NavLink>
@@ -94,9 +102,9 @@ function NavBar() {
               <NavLink
                 to="/resume"
                 className={({ isActive }) =>
-                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link  pr-4 pl-4"
+                  isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={() => updateExpanded(false)}
+                onClick={handleNavLinkClick}
               >
                 Resume
               </NavLink>
@@ -105,7 +113,7 @@ function NavBar() {
               <NavLink
                 to="/#contact"
                 className="pr-4 nav-link not-active"
-                onClick={() => updateExpanded(false)}
+                onClick={handleNavLinkClick}
               >
                 Contact
               </NavLink>
