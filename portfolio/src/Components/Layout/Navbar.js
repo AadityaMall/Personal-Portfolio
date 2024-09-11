@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -7,6 +7,9 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+
+  const navButton = useRef(null);
+  const linksContainerRef = useRef(null);
 
   const scrollHandler = useCallback(() => {
     if (window.scrollY >= 20) {
@@ -26,12 +29,13 @@ function NavBar() {
     };
   }, [scrollHandler]);
 
-  // Function to handle nav link click and close the navbar
-  const handleNavLinkClick = () => {
-    if (expand) {
-      updateExpanded(false);
+  function collapseNav() {
+    if (navButton.current && linksContainerRef.current) {
+      navButton.current.classList.add("collapsed");
+      linksContainerRef.current.classList.remove("show");
+      updateExpanded(false); // Ensure state reflects the collapsed state
     }
-  };
+  }
 
   return (
     <Navbar
@@ -55,12 +59,13 @@ function NavBar() {
           aria-controls="responsive-navbar-nav"
           onClick={() => updateExpanded(!expand)}
           className="relative bg-transparent border-transparent"
+          ref={navButton}
         >
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100 transition-transform duration-350 ease-in-out"></span>
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100"></span>
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform rotate-0 left-0 opacity-100 transition-transform duration-350 ease-in-out"></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" ref={linksContainerRef}>
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <NavLink
@@ -68,7 +73,7 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={handleNavLinkClick}
+                onClick={collapseNav}
               >
                 Home
               </NavLink>
@@ -80,7 +85,7 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={handleNavLinkClick}
+                onClick={collapseNav}
               >
                 Experience
               </NavLink>
@@ -92,7 +97,7 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={handleNavLinkClick}
+                onClick={collapseNav}
               >
                 Projects
               </NavLink>
@@ -104,7 +109,7 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={handleNavLinkClick}
+                onClick={collapseNav}
               >
                 Resume
               </NavLink>
@@ -113,7 +118,7 @@ function NavBar() {
               <NavLink
                 to="/#contact"
                 className="pr-4 nav-link not-active"
-                onClick={handleNavLinkClick}
+                onClick={collapseNav}
               >
                 Contact
               </NavLink>
