@@ -57,7 +57,6 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => updateExpanded(!expand)}
           className="relative bg-transparent border-transparent"
           ref={navButton}
         >
