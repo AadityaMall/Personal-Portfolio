@@ -60,17 +60,19 @@ function NavBar() {
           <h1 className="text-brandColor text-3xl">{`<Aaditya Mall/>`}</h1>
         </Navbar.Brand>
         {/* Custom button for toggling navbar */}
-        <button
+        <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          aria-expanded={expand}
           onClick={handleToggleClick}
+          aria-expanded={expand}
           className="relative bg-transparent border-transparent p-2"
           ref={navButton}
         >
+          
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
           <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
-        </button>
+        </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav" ref={linksContainerRef}>
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>

@@ -27,7 +27,6 @@ import {
   MySQLIcon,
   VSCodeIcon,
   Postman,
-  Windows,
   HtmlIcon,
   CSSIcon,
   BootstrapIcon,
