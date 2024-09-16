@@ -27,7 +27,7 @@ function Footer() {
                     <span>Copyright © {year}</span>
                 </Col>
                 <Col md="4" className="flex justify-center items-center">
-                    <ul className="flex justify-center items-center mb-0">
+                    <ul className="flex justify-center items-center mb-0 px-0 p-3">
                         <li className="ml-[10px] mr-[10px]">
                             <a
                                 href="https://github.com/aadityamall"

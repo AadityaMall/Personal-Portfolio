@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useLocation } from "react-router-dom"; // Importing useLocation
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [expand, updateExpanded] = useState(false); // Handles whether navbar is expanded
+  const [navColour, updateNavbar] = useState(false); // Handles background color change on scroll
+  const location = useLocation(); // Detect route changes
 
-  const navButton = useRef(null);
-  const linksContainerRef = useRef(null);
-
+  // Handle scroll event to update navbar background color
   const scrollHandler = useCallback(() => {
     if (window.scrollY >= 20) {
       updateNavbar(true);
@@ -19,31 +19,26 @@ function NavBar() {
     }
   }, []);
 
+  // Add scroll event listener
   useEffect(() => {
-    const handleScroll = () => {
-      scrollHandler();
-    };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", scrollHandler);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", scrollHandler);
     };
   }, [scrollHandler]);
 
-  function collapseNav() {
-    if (navButton.current && linksContainerRef.current) {
-      navButton.current.classList.add("collapsed");
-      linksContainerRef.current.classList.remove("show");
-      updateExpanded(false); // Ensure state reflects the collapsed state
-    }
-  }
+  // Collapse the navbar when changing route
+  useEffect(() => {
+    updateExpanded(false); // Collapse navbar after route change
+  }, [location]); // Triggers when the location (route) changes
 
   const handleToggleClick = () => {
-    updateExpanded(!expand);
+    updateExpanded(!expand); // Toggle the navbar state
   };
 
   return (
     <Navbar
-      expanded={expand}
+      expanded={expand} // Control the collapse/expand state
       fixed="top"
       expand="md"
       className={
@@ -59,29 +54,27 @@ function NavBar() {
         >
           <h1 className="text-brandColor text-3xl">{`<Aaditya Mall/>`}</h1>
         </Navbar.Brand>
-        {/* Custom button for toggling navbar */}
+        
+        {/* Bootstrap's Navbar.Toggle for toggle button */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={handleToggleClick}
-          aria-expanded={expand}
-          className="relative bg-transparent border-transparent p-2"
-          ref={navButton}
+          className="relative bg-transparent border-transparent p-2 focus:outline-none focus:ring-0"
         >
-          
-          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
-          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
-          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transform transition-transform duration-350 ease-in-out"></span>
+          {/* Custom Hamburger icon */}
+          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transition-transform duration-350 ease-in-out"></span>
+          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transition-transform duration-350 ease-in-out"></span>
+          <span className="block bg-[#00ADB5] h-[4px] w-[27px] mt-[5px] mb-[5px] transition-transform duration-350 ease-in-out"></span>
         </Navbar.Toggle>
 
-        <Navbar.Collapse id="responsive-navbar-nav" ref={linksContainerRef}>
-          <Nav className="ms-auto" defaultActiveKey="#home">
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto">
             <Nav.Item>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={collapseNav}
               >
                 Home
               </NavLink>
@@ -93,7 +86,6 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={collapseNav}
               >
                 Experience
               </NavLink>
@@ -105,7 +97,6 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={collapseNav}
               >
                 Projects
               </NavLink>
@@ -117,16 +108,15 @@ function NavBar() {
                 className={({ isActive }) =>
                   isActive ? "nav-link pr-4 pl-4 active" : "nav-link pr-4 pl-4"
                 }
-                onClick={collapseNav}
               >
                 Resume
               </NavLink>
             </Nav.Item>
+
             <Nav.Item>
               <NavLink
                 to="/#contact"
                 className="pr-4 nav-link not-active"
-                onClick={collapseNav}
               >
                 Contact
               </NavLink>
