@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typewriter from "typewriter-effect";
 import { Container } from "react-bootstrap";
 import {
@@ -12,7 +12,7 @@ import {
   MailOutline,
 } from "@mui/icons-material";
 import { Button, Tooltip } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import useIntersectionObserver from "../../useIntersectionObserver";
 import { Row, Col } from "react-bootstrap";
 import {
@@ -48,6 +48,8 @@ const skillIconsSX = {
 };
 
 const Home = () => {
+  const location = useLocation();
+  const fromNavLink = location.state;
   const navigate = useNavigate();
   const [ref, isVisible] = useIntersectionObserver({
     threshold: 0.1, // Adjust as needed
@@ -62,8 +64,11 @@ const Home = () => {
     threshold: 0.1, // Adjust as needed
   });
 
-  const handleLinkClick = (event, id) => {
-    event.preventDefault();
+  const handleLinkClick = (event = null, id) => {
+    if (event) {
+      console.log("control here");
+      event.preventDefault();
+    }
     const section = document.getElementById(id);
     const offset = 0; // Adjust this value as needed
 
@@ -84,6 +89,15 @@ const Home = () => {
   const handleWhatsAppClick = () => {
     window.location.href = `https://wa.me/+919326430750`;
   };
+
+  useEffect(() => {
+    if (!fromNavLink) {
+      window.scrollTo(0, 0);
+    }
+    if (fromNavLink !== null) {
+      handleLinkClick(null, "contact");
+    }
+  }, [fromNavLink]);
 
   return (
     <>
@@ -158,7 +172,7 @@ const Home = () => {
                 <Button
                   variant="contained"
                   className="w-full max-w-500 m-2 normal-case bg-brandColor text-black font-bold"
-                  onClick={(e)=>handleLinkClick(e,"contact")}
+                  onClick={(e) => handleLinkClick(e, "contact")}
                 >
                   <Call />
                   Contact
@@ -189,7 +203,7 @@ const Home = () => {
       >
         <Container className="m-3 mt-0 mb-0">
           <Row className="mt-[80px]">
-           <Col md={4} className="flex justify-center items-center">
+            <Col md={4} className="flex justify-center items-center">
               <img
                 src="/images/Aaditya.JPG"
                 alt="Aaditya Mall"
@@ -239,129 +253,127 @@ const Home = () => {
           </h1>
           <Row className="mt-[20px]">
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <MongoDBIcon sx={skillIconsSX} />
-                  <Tooltip title="Beginner">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[60%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <MongoDBIcon sx={skillIconsSX} />
+                <Tooltip title="Beginner">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[60%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <JSIcon sx={skillIconsSX} />
-                  <Tooltip title="Intermidiate">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[85%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <JSIcon sx={skillIconsSX} />
+                <Tooltip title="Intermidiate">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[85%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <ReactIcon sx={skillIconsSX} />
-                  <Tooltip title="Intermidiate">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
-                    </div>
-              </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <ReactIcon sx={skillIconsSX} />
+                <Tooltip title="Intermidiate">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <NodeJsIcon sx={skillIconsSX} />
-                  <Tooltip title="Intermidiate">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
-                    </div>
-              </Tooltip>
-                </div>
-            </Col>
-
-            <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <HtmlIcon sx={skillIconsSX} />
-                  <Tooltip title="Advanced">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[100%] bg-brandColor"></div>
-                    </div>
-              </Tooltip>
-                </div>
-            </Col>
-            <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <CSSIcon sx={skillIconsSX} />
-                  <Tooltip title="Advanced">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[90%] bg-brandColor"></div>
-                    </div>
-              </Tooltip>
-                </div>
-            </Col>
-            <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <BootstrapIcon sx={skillIconsSX} />
-                  <Tooltip title="Intermidiate">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[85%] bg-brandColor"></div>
-                    </div>
-              </Tooltip>
-                </div>
-            </Col>
-            <Col xs={6} md={3}>
-              
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <TailwindCssIcon sx={skillIconsSX} />
-                  <Tooltip title="Beginner">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[50%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
-              
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <NodeJsIcon sx={skillIconsSX} />
+                <Tooltip title="Intermidiate">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
 
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <CppIcon sx={skillIconsSX} />
-                  <Tooltip title="Intermidiate">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <HtmlIcon sx={skillIconsSX} />
+                <Tooltip title="Advanced">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[100%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <CSSIcon sx={skillIconsSX} />
+                <Tooltip title="Advanced">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[90%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <BootstrapIcon sx={skillIconsSX} />
+                <Tooltip title="Intermidiate">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[85%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <TailwindCssIcon sx={skillIconsSX} />
+                <Tooltip title="Beginner">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[50%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
 
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <PythonIcon sx={skillIconsSX} />
-                  <Tooltip title="Intermidiate">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[75%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <CppIcon sx={skillIconsSX} />
+                <Tooltip title="Intermidiate">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
+            </Col>
+
+            <Col xs={6} md={3}>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <PythonIcon sx={skillIconsSX} />
+                <Tooltip title="Intermidiate">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[75%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <JavaIcon sx={skillIconsSX} />
-                  <Tooltip title="Beginner">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[50%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <JavaIcon sx={skillIconsSX} />
+                <Tooltip title="Beginner">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[50%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
             <Col xs={6} md={3}>
-                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
-                  <MySQLIcon sx={skillIconsSX} />
-                  <Tooltip title="Beginner">
-                    <div className="absolute w-full bottom-0 left-0">
-                      <div className="h-[8px] w-[50%] bg-brandColor"></div>
-                    </div>
-                  </Tooltip>
-                </div>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <MySQLIcon sx={skillIconsSX} />
+                <Tooltip title="Beginner">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[50%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -383,11 +395,11 @@ const Home = () => {
                   <Postman sx={skillIconsSX} />
                 </div>
               </Tooltip>
-          </Col>
+            </Col>
           </Row>
         </Container>
       </div>
-      <div  
+      <div
         className={`flex justify-start w-full md:h-screen md:justify-center md:mb-0 mb-[100px] flex-column items-center fade-in-section ${
           isVisibleThree ? "visible" : ""
         }`}

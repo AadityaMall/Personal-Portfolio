@@ -54,7 +54,7 @@ function NavBar() {
         >
           <h1 className="text-brandColor text-3xl">{`<Aaditya Mall/>`}</h1>
         </Navbar.Brand>
-        
+
         {/* Bootstrap's Navbar.Toggle for toggle button */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -115,7 +115,8 @@ function NavBar() {
 
             <Nav.Item>
               <NavLink
-                to="/#contact"
+                to={"/"}
+                state={{ fromNavLink: true }} 
                 className="pr-4 nav-link not-active"
               >
                 Contact
