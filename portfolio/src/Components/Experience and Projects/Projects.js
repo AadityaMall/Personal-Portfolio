@@ -40,6 +40,24 @@ const Projects = () => {
             </Col>
             <Col md={4}>
               <ProjectCard
+                title={"CertiMail - Automated Certificate Sender"}
+                subtitle={"Full Stack Application"}
+                image={"/images/certimail.png"}
+                iconChips={[
+                  ReactIcon,
+                  JSIcon,
+                  NodeJsIcon,
+                  BootstrapIcon,
+                ]}
+                previewLink={"https://certi-mail.vercel.app/"}
+                githubLink={
+                  "https://github.com/AadityaMall/Certi-Mail"
+                }
+                description={`CertiMail is a streamlined and efficient <span class="text-brandColor">full stack web application</span> designed to automate certificate generation, distribution, and mass emailing. CertiMail simplifies workflows by enabling users to send personalized certificates and mass emails in just a few clicks. `}
+              />
+            </Col>
+            <Col md={4}>
+              <ProjectCard
                 title={"Personal Portfolio"}
                 subtitle={"React Website"}
                 image={"/images/portfolio.png"}
