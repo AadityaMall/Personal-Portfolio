@@ -31,7 +31,7 @@ const Projects = () => {
                   NodeJsIcon,
                   BootstrapIcon,
                 ]}
-                previewLink={"https://solestore-ecommerce.onrender.com/"}
+                previewLink={"https://sole-store.vercel.app/"}
                 githubLink={
                   "https://github.com/AadityaMall/SoleStore-Ecommerce"
                 }
