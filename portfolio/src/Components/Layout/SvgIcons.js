@@ -600,3 +600,51 @@ export const PHPIcon = (props) => (
     </SvgIcon>
   </Tooltip>
 );
+
+export const IntelliJIcon = (props) => (
+  <SvgIcon {...props} viewBox="0 0 256 256">
+    <defs>
+      <linearGradient x1="0%" y1="50%" x2="99.8%" y2="50%" id="grad1">
+        <stop stopColor="#F97A12" offset="26%" />
+        <stop stopColor="#B07B58" offset="46%" />
+        <stop stopColor="#577BAE" offset="72%" />
+        <stop stopColor="#1E7CE5" offset="91%" />
+        <stop stopColor="#087CFA" offset="100%" />
+      </linearGradient>
+    </defs>
+    <g>
+      <polygon
+        fill="url(#grad1)"
+        points="64.8 199.6 2.8 150.8 33.6 93.6 122 128"
+      />
+      <polygon fill="black" x="48" y="48" width="160" height="160" />
+      <path
+        d="M63.2,178 L123.2,178 L123.2,188 L63.2,188 L63.2,178 Z M106,80.8 L106,68.8 L73.2,68.8 L73.2,80.8 L82.4,80.8 L82.4,122.8 L73.2,122.8 L73.2,135.2 L106,135.2 L106,122.8 L96.8,122.8 L96.8,80.8 L106,80.8 Z M138,136 C133.4,136.2 128.9,135.2 124.8,133.2 C121.5,131.4 118.5,128.9 116,126 L125.2,115.6 C126.9,117.4 128.7,119 130.8,120.4 C132.7,121.5 134.9,122.1 137.2,122 C139.7,122.2 142.1,121.1 143.6,119.2 C145.5,116.8 146.3,113.8 146,110.8 L146,68 L160.8,68 L160.8,111.2 C160.9,114.7 160.4,118.3 159.2,121.6 C158.1,125 156.2,128 153.6,130.4 C149.1,133.8 143.6,135.7 138,136 Z"
+        fill="white"
+      />
+    </g>
+  </SvgIcon>
+);
+
+export const EclipseIcon = (props) => (
+  <SvgIcon {...props} viewBox="0 0 256 256">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop stopColor="#494949" offset="0%" />
+        <stop stopColor="#2C2255" offset="100%" />
+      </linearGradient>
+    </defs>
+    <g>
+      <circle fill="url(#grad1)" cx="128" cy="128" r="120" />
+      <rect fill="white" x="50" y="115" width="156" height="20" />
+      <rect fill="white" x="50" y="145" width="156" height="10" />
+      <rect fill="white" x="50" y="165" width="156" height="10" />
+      <path
+        d="M45 110 C 85 20, 175 20, 215 110"
+        stroke="white"
+        strokeWidth="10"
+        fill="none"
+      />
+    </g>
+  </SvgIcon>
+);

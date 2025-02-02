@@ -31,6 +31,9 @@ import {
   CSSIcon,
   BootstrapIcon,
   TailwindCssIcon,
+  PHPIcon,
+  IntelliJIcon,
+  EclipseIcon,
 } from "../Layout/SvgIcons";
 
 const iconSX = {
@@ -375,6 +378,16 @@ const Home = () => {
                 </Tooltip>
               </div>
             </Col>
+            <Col xs={6} md={3}>
+              <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                <PHPIcon sx={skillIconsSX} />
+                <Tooltip title="Beginner">
+                  <div className="absolute w-full bottom-0 left-0">
+                    <div className="h-[8px] w-[50%] bg-brandColor"></div>
+                  </div>
+                </Tooltip>
+              </div>
+            </Col>
           </Row>
         </Container>
         <Container className="m-3 mt-5 mb-0 flex flex-column justify-center items-center">
@@ -382,17 +395,31 @@ const Home = () => {
             Professional <strong className="text-brandColor">Toolset</strong>
           </h1>
           <Row className="mt-[20px]">
-            <Col xs={6} md={6}>
+            <Col xs={6} md={4}>
               <Tooltip title="Vs Code">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <VSCodeIcon sx={skillIconsSX} />
                 </div>
               </Tooltip>
             </Col>
-            <Col xs={6} md={6}>
+            <Col xs={6} md={4}>
               <Tooltip title="Postman">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <Postman sx={skillIconsSX} />
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={4}>
+              <Tooltip title="IntelliJ IDE">
+                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <IntelliJIcon sx={skillIconsSX} />
+                </div>
+              </Tooltip>
+            </Col>
+            <Col xs={6} md={4}>
+              <Tooltip title="Eclipse IDE">
+                <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
+                  <EclipseIcon sx={skillIconsSX} />
                 </div>
               </Tooltip>
             </Col>
