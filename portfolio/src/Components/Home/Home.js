@@ -394,29 +394,29 @@ const Home = () => {
           <h1 className="text-white text-center">
             Professional <strong className="text-brandColor">Toolset</strong>
           </h1>
-          <Row className="mt-[20px]">
-            <Col xs={6} md={4}>
+          <Row className="w-full mt-[20px]">
+            <Col xs={6} md={3}>
               <Tooltip title="Vs Code">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <VSCodeIcon sx={skillIconsSX} />
                 </div>
               </Tooltip>
             </Col>
-            <Col xs={6} md={4}>
+            <Col xs={6} md={3}>
               <Tooltip title="Postman">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <Postman sx={skillIconsSX} />
                 </div>
               </Tooltip>
             </Col>
-            <Col xs={6} md={4}>
+            <Col xs={6} md={3}>
               <Tooltip title="IntelliJ IDE">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <IntelliJIcon sx={skillIconsSX} />
                 </div>
               </Tooltip>
             </Col>
-            <Col xs={6} md={4}>
+            <Col xs={6} md={3}>
               <Tooltip title="Eclipse IDE">
                 <div className="relative text-4xl p-[20px] md:m-[15px] sm:m-[6px] border border-brandColor align-middle text-center rounded-lg table shadow-[4px_5px_4px_3px_brandColor] overflow-hidden transition-all duration-400">
                   <EclipseIcon sx={skillIconsSX} />

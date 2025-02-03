@@ -162,7 +162,7 @@ const Experience = () => {
                           {" "}
                           Information Architecture{" "}
                         </strong>{" "}
-                        and
+                        and {" "}
                         <strong className="text-brandColor">
                           Flowcharts
                         </strong> {" "}

@@ -604,47 +604,107 @@ export const PHPIcon = (props) => (
 export const IntelliJIcon = (props) => (
   <SvgIcon {...props} viewBox="0 0 256 256">
     <defs>
-      <linearGradient x1="0%" y1="50%" x2="99.8%" y2="50%" id="grad1">
+      <linearGradient
+        id="linearGradient-1"
+        x1="0%"
+        y1="50%"
+        x2="99.8%"
+        y2="50%"
+      >
         <stop stopColor="#F97A12" offset="26%" />
         <stop stopColor="#B07B58" offset="46%" />
         <stop stopColor="#577BAE" offset="72%" />
         <stop stopColor="#1E7CE5" offset="91%" />
         <stop stopColor="#087CFA" offset="100%" />
       </linearGradient>
+      <linearGradient
+        id="linearGradient-2"
+        x1="0.34%"
+        y1="34.54%"
+        x2="121.18%"
+        y2="77.62%"
+      >
+        <stop stopColor="#F97A12" offset="0%" />
+        <stop stopColor="#CB7A3E" offset="7%" />
+        <stop stopColor="#9E7B6A" offset="15%" />
+        <stop stopColor="#757B91" offset="24%" />
+        <stop stopColor="#537BB1" offset="33%" />
+        <stop stopColor="#387CCC" offset="43%" />
+        <stop stopColor="#237CE0" offset="54%" />
+        <stop stopColor="#147CEF" offset="66%" />
+        <stop stopColor="#0B7CF7" offset="79%" />
+        <stop stopColor="#087CFA" offset="100%" />
+      </linearGradient>
     </defs>
     <g>
       <polygon
-        fill="url(#grad1)"
+        fill="url(#linearGradient-1)"
         points="64.8 199.6 2.8 150.8 33.6 93.6 122 128"
       />
-      <polygon fill="black" x="48" y="48" width="160" height="160" />
+      <polygon
+        fill="url(#linearGradient-2)"
+        points="256 68.4 251.2 216.4 152.8 256 93.6 217.6 180 128 142.4 44.8 176.4 4"
+      />
+      <rect fill="#000000" x="48" y="48" width="160" height="160" />
       <path
-        d="M63.2,178 L123.2,178 L123.2,188 L63.2,188 L63.2,178 Z M106,80.8 L106,68.8 L73.2,68.8 L73.2,80.8 L82.4,80.8 L82.4,122.8 L73.2,122.8 L73.2,135.2 L106,135.2 L106,122.8 L96.8,122.8 L96.8,80.8 L106,80.8 Z M138,136 C133.4,136.2 128.9,135.2 124.8,133.2 C121.5,131.4 118.5,128.9 116,126 L125.2,115.6 C126.9,117.4 128.7,119 130.8,120.4 C132.7,121.5 134.9,122.1 137.2,122 C139.7,122.2 142.1,121.1 143.6,119.2 C145.5,116.8 146.3,113.8 146,110.8 L146,68 L160.8,68 L160.8,111.2 C160.9,114.7 160.4,118.3 159.2,121.6 C158.1,125 156.2,128 153.6,130.4 C149.1,133.8 143.6,135.7 138,136 Z"
-        fill="white"
+        d="M63.2,178 L123.2,178 L123.2,188 L63.2,188 L63.2,178 Z M106,80.8 L106,68.8 L73.2,68.8 L73.2,80.8 L82.4,80.8 L82.4,122.8 L73.2,122.8 L73.2,135.2 L106,135.2 L106,122.8 L96.8,122.8 L96.8,80.8 L106,80.8 Z M138,136 C133.4,136.2 128.9,135.2 124.8,133.2 C121.5,131.4 118.5,128.9 116,126 L125.2,115.6 C126.9,117.4 128.7,119 130.8,120.4 C132.7,121.5 134.9,122.1 137.2,122 C139.7,122.2 142.1,121.1 143.6,119.2 C145.5,116.8 146.3,113.8 146,110.8 L146,68 L160.8,68 L160.8,111.2 C161,114.7 160.4,118.3 159.2,121.6 C158.1,125 156.2,128 153.6,130.4 C149.1,133.8 143.6,135.7 138,136 Z"
+        fill="#FFFFFF"
       />
     </g>
   </SvgIcon>
 );
 
 export const EclipseIcon = (props) => (
-  <SvgIcon {...props} viewBox="0 0 256 256">
+  <SvgIcon {...props} viewBox="0 -8 256 256">
     <defs>
-      <linearGradient id="grad1" x1="0%" y1="50%" x2="100%" y2="50%">
-        <stop stopColor="#494949" offset="0%" />
-        <stop stopColor="#2C2255" offset="100%" />
+      <linearGradient id="gradient1" x1="50%" y1="1089%" x2="50%" y2="-159%">
+        <stop offset="30.33%" stopColor="#473788" />
+        <stop offset="87.2%" stopColor="#2C2255" />
+      </linearGradient>
+      <linearGradient id="gradient2" x1="50%" y1="896%" x2="50%" y2="-352%">
+        <stop offset="30.33%" stopColor="#473788" />
+        <stop offset="87.2%" stopColor="#2C2255" />
+      </linearGradient>
+      <linearGradient id="gradient3" x1="50%" y1="215%" x2="50%" y2="-166%">
+        <stop offset="30.33%" stopColor="#473788" />
+        <stop offset="86.31%" stopColor="#2C2255" />
       </linearGradient>
     </defs>
     <g>
-      <circle fill="url(#grad1)" cx="128" cy="128" r="120" />
-      <rect fill="white" x="50" y="115" width="156" height="20" />
-      <rect fill="white" x="50" y="145" width="156" height="10" />
-      <rect fill="white" x="50" y="165" width="156" height="10" />
       <path
-        d="M45 110 C 85 20, 175 20, 215 110"
-        stroke="white"
-        strokeWidth="10"
-        fill="none"
+        d="M251.48 152.82C246.25 170.64 236.53 186.62 222.33 200.73C203.96 218.98 183.31 229.55 159.75 233.1C153.8 234 147.67 234.47 141.34 234.47C109.7 234.47 82.64 223.23 60.14 200.73C46.03 186.61 36.38 170.64 31.19 152.82Z"
+        fill="#2C2255"
       />
+      <path
+        d="M255.9 126.17C255.69 130.42 255.25 134.57 254.61 138.63H28.29C27.61 135.94 27.13 131.81 26.88 127.58L26.8 126.17H255.9Z"
+        fill="#2C2255"
+      />
+      <path
+        d="M254.39 99.52C255.07 103.58 255.55 107.71 255.81 111.93H26.8C27.01 109.1 27.44 104.95 28.07 100.88L28.29 99.52H254.39Z"
+        fill="#2C2255"
+      />
+      <path
+        d="M251.48 86.69C246.25 68.81 236.54 52.77 222.33 38.55C204.49 20.72 183.69 10.02 159.93 6.42C153.92 5.51 147.73 5.03 141.34 5.03C109.7 5.03 82.64 16.21 60.14 38.55C46.02 52.77 36.37 68.81 31.18 86.69Z"
+        fill="#2C2255"
+      />
+      <path
+        d="M19.99 119.75C19.99 59.24 65.44 8.96 124.57 0.11C123.1 0.06 121.63 0 120.14 0C53.79 0 0 53.61 0 119.75C0 185.9 53.79 239.51 120.14 239.51C121.63 239.51 123.1 239.46 124.57 239.41C65.44 230.56 19.99 180.28 19.99 119.75Z"
+        fill="#F7941E"
+      />
+      <g transform="translate(63.11, 99.07)">
+        <path
+          d="M156.2 14.26C155.81 9.53 155.02 4.91 153.82 0.45H2.65C1.46 4.91 0.66 9.53 0.27 14.26H156.2Z"
+          fill="url(#gradient1)"
+        />
+        <path
+          d="M156.2 27.1H0.27C0.66 31.83 1.45 36.45 2.65 40.91H153.83C155.02 36.45 155.81 31.83 156.2 27.1Z"
+          fill="url(#gradient2)"
+        />
+        <path
+          d="M78.24 98.93C109.63 98.93 136.69 80.43 149.16 53.75H7.31C19.78 80.43 46.84 98.93 78.24 98.93Z"
+          fill="url(#gradient3)"
+        />
+      </g>
     </g>
   </SvgIcon>
 );
